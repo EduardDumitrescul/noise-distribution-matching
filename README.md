@@ -23,7 +23,7 @@ The dataset consists of a collection of images stored in `.npy` (numpy array) fo
   * **Validation Set:** 1800 labeled pairs
   * **Test Set:** 4104 unlabeled pairs
 
-<p align="center" width="100%"> <img src="example_distribution.svg" height="200" alt="Dataset Distribution Overview"> <img src="train_label_dist.svg" height="200" alt="Train Label Distribution"> <img src="val_label_dist.svg" height="200" alt="Validation Label Distribution"> </p>
+<p align="center" width="100%"> <img src="fig/example_distribution.svg" height="200" alt="Dataset Distribution Overview"> <img src="fig/train_label_dist.svg" height="200" alt="Train Label Distribution"> <img src="fig/val_label_dist.svg" height="200" alt="Validation Label Distribution"> </p>
 
 Initial analysis shows that the data is well-split. The labels are evenly distributed, so no further balancing is required.
 
@@ -41,7 +41,7 @@ Initial analysis shows that the data is well-split. The labels are evenly distri
 * **Standard Deviation:** The standard deviation falls within the range of $[0, 3.5]$. Similar to the min/max values, the standard deviation histogram displays two peaks. This bimodal shape implies a potential correlation between the noise distribution and the image contrast (standard deviation).
 
 <p align="center", width="80%">
-    <img src="global-stats.svg" height="640" alt="Global Statistics">
+    <img src="fig/global-stats.svg" height="640" alt="Global Statistics">
 </p>
 
 ### 2.2 Data Preprocessing
@@ -63,7 +63,7 @@ Images were loaded from the `samples` directory. Since the data is stored as raw
 
 
 <p align="center", width="80%">
-    <img src="preprocessed_image.svg" height="640" alt="Preprocessed Image">
+    <img src="fig/preprocessed_image.svg" height="640" alt="Preprocessed Image">
 </p>
 Preprocessing significantly enhances the visibility of underlying patterns.
 
@@ -80,7 +80,7 @@ We developed a diagnostic tool to evaluate image frequency content before and af
 * **Comparison:** The analysis was generated for both raw and `symlog`-transformed images to verify that preprocessing preserves essential structural information while handling noise.
 
 <p align="center", width="80%">
-    <img src="fft_spectrum_prep.svg" height="400" alt="Spectrum">
+    <img src="fig/fft_spectrum_prep.svg" height="400" alt="Spectrum">
 </p>
 
 
@@ -100,7 +100,7 @@ This 1D profile allows for immediate visual diagnosis:
 * **Artifact Detection:** Sudden spikes or bumps in the line indicate specific, repetitive noise frequencies that might not be obvious in the 2D image.
 
 <p align="center", width="80%">
-    <img src="radial_profile_preprocessed.svg" height="360" alt="Radial Profile">
+    <img src="fig/radial_profile_preprocessed.svg" height="360" alt="Radial Profile">
 </p>
 
 ### 3.3 Pixel Value Histogram
@@ -108,7 +108,7 @@ This 1D profile allows for immediate visual diagnosis:
 To reduce the complex spatial data into a one-dimensional statistical summary, we calculated pixel intensity histograms using 128 bins.
 
 <p align="center", width="80%">
-    <img src="histogram_preprocessed.svg" height="215" alt="Historam">
+    <img src="fig/histogram_preprocessed.svg" height="215" alt="Historam">
 </p>
 
 ### 3.4 Full Feature Set Visualization
@@ -118,7 +118,7 @@ Simple values: mean, standard deviation, min pixel value, max pixel value, kurto
 More complex features: pixel value histogram, spectrum, radial profile
 
 <p align="center", width="80%">
-    <img src="full_feature_set.svg" height="150" alt="Full Feature Set">
+    <img src="fig/full_feature_set.svg" height="150" alt="Full Feature Set">
 </p>
 
 ## 4. XGBoost
@@ -277,7 +277,7 @@ To ensure computational efficiency during the extensive search process, specific
 * **AUC**: 0.8005
 * **Public Test Accuracy**: 77.11%
 <p align="center", width="80%">
-    <img src="xgboost-results.svg" width="80%" alt="Full Feature Set">
+    <img src="fig/xgboost-results.svg" width="80%" alt="Full Feature Set">
 </p>
 
 ## 5. Siamese Network
@@ -340,7 +340,7 @@ Training halted at epoch 63 upon triggering early stopping. The model achieved i
 
 
 <p align="center", width="80%">
-    <img src="loss_graph_siamese.png" width="80%" alt="Loss Graph of Siamese Network">
+    <img src="fig/loss_graph_siamese.png" width="80%" alt="Loss Graph of Siamese Network">
 </p>
 
 > Magnitude Spectrum and SymLog Tranformation
@@ -358,7 +358,7 @@ Training halted at **Epoch 35** upon triggering early stopping. The model achiev
 
 
 <p align="center", width="80%">
-    <img src="loss_graph-mag.png" width="80%" alt="Loss Graph of Siamese Network">
+    <img src="fig/loss_graph-mag.png" width="80%" alt="Loss Graph of Siamese Network">
 </p\>
 
 

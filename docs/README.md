@@ -4,16 +4,21 @@
 **Student:** Dumitrescul Eduard-Valentin\
 **Group:** 412
 
------
+**Best Accuracy: 90.178% (XGBoost)**
 
-## 1\. Introduction
+*Gemini 3 was used to assist in the structural organization and grammatical polishing of this report. All experimental 
+data, model architectures and results were produced by the author.*
+
+----
+
+## 1. Introduction
 
 The objective of this project is to develop a machine learning solution capable of 
 distinguishing between noise images coming from different distributions.
 
 This report documents the end-to-end process, starting from exploratory data analysis and feature engineering, moving through the training of classical machine learning models  based on statistical features, and concluding with a Deep Learning approach (CNN). The performance of these models is evaluated using Mean Absolute Error (MAE), Mean Squared Error (MSE), and rank correlation coefficients (Spearman and Kendall) on a validation dataset.
 
-## 2\. Data Analysis and Preprocessing
+## 2. Data Analysis and Preprocessing
 
 ### 2.1 Dataset Overview
 
@@ -30,8 +35,6 @@ The dataset consists of a collection of images stored in `.npy` (numpy array) fo
 </p>
 
 Initial analysis shows that the data is well-split. The labels are evenly distributed, so no further balancing is required.
-
-### 2.2 Global Statistics
 
 **Summary Metrics**
 * **Mean:** 0.03
@@ -161,11 +164,6 @@ This model achieved the following results:
 
 ### 4.4 Grid Search Hyperparameter Tuning
 
-**Tuned Parameters:**
-Here is the drafted section for your project report. I have formatted the parameters into descriptions as requested and organized the configuration data into a readable format suitable for a technical report.
-
-### 4.4 Grid Search Hyperparameter Tuning
-
 To optimize the model's performance and mitigate overfitting, we employed a Grid Search strategy. This method systematically explores a defined combination of hyperparameters to identify the configuration that yields the best evaluation metric.
 
 **Tuned Parameters**
@@ -283,9 +281,6 @@ To ensure computational efficiency during the extensive search process, specific
 <p align="center" width="80%">
     <img src="fig/xgboost-results.svg" width="80%" alt="Full Feature Set">
 </p>
-
-## 5. Siamese Network
-Here is the completed section for your project report, drafted with medium-complexity wording and succinct descriptions as requested.
 
 ## 5. Siamese Network
 
@@ -459,6 +454,9 @@ Based on the grid search results, the following parameters were selected for the
 
 
 ### Final Results
+For the official submission, the model has been trained using both train and validation datasets, using the graph trick
+and the same parameters as previously.
+This model achieves **90.178%** accuracy on the public test dataset.
 
 
 
